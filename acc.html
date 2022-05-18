@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCESSORIES</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="collection.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" type="text/css" href="slick.css">
+    <link rel="stylesheet" type="text/css" href="slick-theme.css">
+    <style>
+        .links-container {
+            width: 100%;
+            display: flex;
+            padding: 10px 10vw;
+            justify-content: center;
+            list-style: none;
+            border-top: 1px solid #d1d1d1;
+        }
+
+        .link {
+            text-transform: capitalize;
+            padding: 0 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #383838;
+            opacity: 0.5;
+            transition: .5s;
+        }
+
+        .link:hover {
+            opacity: 1;
+        }
+    </style>
+    <style>
+        .pre-btn,
+        .nxt-btn {
+            border: none;
+            width: 10vw;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+            cursor: pointer;
+            z-index: 8;
+        }
+
+        .pre-btn {
+            left: 0;
+            transform: rotate(180deg);
+        }
+
+        .nxt-btn {
+            right: 0;
+        }
+
+        .pre-btn img,
+        .nxt-btn img {
+            opacity: 0.2;
+        }
+
+        .pre-btn:hover img,
+        .nxt-btn:hover img {
+            opacity: 1;
+        }
+    </style>
+    <style>
+        .pre-btn,
+        .nxt-btn {
+            border: none;
+            width: 10vw;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+            cursor: pointer;
+            z-index: 8;
+        }
+
+        .pre-btn {
+            left: 0;
+            transform: rotate(180deg);
+        }
+
+        .nxt-btn {
+            right: 0;
+        }
+
+        .pre-btn img,
+        .nxt-btn img {
+            opacity: 0.2;
+        }
+
+        .pre-btn:hover img,
+        .nxt-btn:hover img {
+            opacity: 1;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0
+        }
+
+        .mySlides {
+            display: none
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            /* max-width: 1000px; */
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+
+            .prev,
+            .next,
+            .text {
+                font-size: 11px
+            }
+        }
+
+        .geeks {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .geeks img {
+            width: 100%;
+            transition: 1s all ease-in-out;
+        }
+
+        .geeks:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+    <!-- SLICK TOP BRANDS -->
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .slider {
+            width: 90%;
+            margin: 0px auto;
+        }
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+
+
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+
+        .slick-active {
+            opacity: .5;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+
+        .banner {
+            width: 100%;
+            color: black;
+            text-overflow: ellipsis;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            font-size: 1.8em;
+            font-weight: 500;
+            margin: 50px 0 10px 30px;
+            max-height: 5em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav">
+            <a href="index.html"><img src="img/dark-logo.png" class="brand-logo" alt=""></a>
+            <div class="nav-items">
+                <div class="search">
+                    <input type="text" class="search-box" placeholder="search brand, product">
+                    <button class="search-btn">search</button>
+                </div>
+                <a href="#"><img src="img/user.png" alt=""></a>
+                <a href="#"><img src="img/cart.png" alt=""></a>
+            </div>
+            <ul class="links-container">
+                <li class="link-item"><a href="index.html" class="link">home</a></li>
+                <li class="link-item"><a href="women.html" class="link">women</a></li>
+                <li class="link-item"><a href="men.html" class="link">men</a></li>
+                <li class="link-item"><a href="kids.html" class="link">kids</a></li>
+                <li class="link-item"><a href="acc.html" class="link">accessories</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar"></nav>
+    <script src="js/nav.js"></script>
+
+    <!-- COROUSEL -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 6</div>
+            <img src="img/header.png" width="380" height="380" style="width:100%">
+            <div class="text"><img src="img/light-logo.png" style="height: 150px; display: block; margin: auto;">
+                <p
+                    style="text-transform: capitalize; font-size: 30px; font-weight: 300; text-align: center; margin-top: 0px;">
+                    best fashion collection of all time</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 6</div>
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/hf5/heb/27309546831902/Cookware_carousal-webhsprevis25march.jpg"
+                style="width:100%; height: 380px;">
+            <div class="text">COOKWARE</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 6</div>
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/h2d/h45/27287382425630/web_hsp_home-appliances_main-carousel_20220323.jpg"
+                style="width:100%; height: 380px;">
+            <div class="text">HOME APPLIANCES</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 6</div>
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/h6d/h41/27287382556702/web_hsp_bedsheets_main-carousel_20220323.jpg"
+                style="width:100%; height: 380px;">
+            <div class="text">BEDSHEETS</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 6</div>
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/hae/h3d/27287382687774/web_hsp_cushion-%26-covers_main-carousel_20220323.jpg"
+                style="width:100%; height: 380px;">
+            <div class="text">CUSHIONS AND COVER</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">6 / 6</div>
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/h9f/h37/27287382818846/web_hsp_home-decor_main-carousel_20220323.jpg" style="width:100%; height: 380px;">
+            <div class="text">HOME DECOR</div>
+        </div>
+
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+    </div>
+
+    <script>
+        // automatic slide
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+    <div class="geeks">
+        <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/banners/2018/2/1/11517478281102-Home-page-Desktop_12.jpg">
+        <!-- <img -->
+            <!-- src=" https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/4/20/ec66c836-84b2-4959-9187-ff6ab6f3ced71650446674907-Top-Brands-On-Offer.jpg "> -->
+    </div>
+    <section class="center slider">
+        <div>
+            <img class="prop"
+                src="https://sslimages.shoppersstop.com/sys-master/root/h33/hbe/27294060544030/web_hsp_cookware-set_make-it-with-love_20220324.jpg">
+        </div>
+        <div>
+            <img class="prop"
+                src="https://sslimages.shoppersstop.com/sys-master/root/h35/hbb/27294060609566/web_hsp_kadai_make-it-with-love_20220324.jpg">
+        </div>
+        <div>
+            <img class="prop"
+                src="https://sslimages.shoppersstop.com/sys-master/root/h74/hba/27294060675102/web_hsp_pots-%26-pan_make-it-with-love_20220324.jpg">
+        </div>
+        <div>
+            <img class="prop"
+                src="https://sslimages.shoppersstop.com/sys-master/root/h63/hb7/27294060740638/web_hsp_tawa_make-it-with-love_20220324.jpg">
+        </div>
+        <div>
+            <img class="prop"
+                src="https://sslimages.shoppersstop.com/sys-master/root/h65/hb4/27294060806174/web_hsp_pressure-cooker_make-it-with-love_20220324.jpg">
+        </div>
+        <div>
+            <img class="prop"
+                src="https://sslimages.shoppersstop.com/sys-master/root/ha4/hb3/27294060871710/web_hsp_bakeware_make-it-with-love_20220324.jpg">
+        </div>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="slick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function () {
+            $(".vertical-center-4").slick({
+                dots: true,
+                vertical: true,
+                centerMode: true,
+                slidesToShow: 4,
+                slidesToScroll: 2
+            });
+            $(".vertical-center-3").slick({
+                dots: true,
+                vertical: true,
+                centerMode: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+            $(".vertical-center-2").slick({
+                dots: true,
+                vertical: true,
+                centerMode: true,
+                slidesToShow: 2,
+                slidesToScroll: 2
+            });
+            $(".vertical-center").slick({
+                dots: true,
+                vertical: true,
+                centerMode: true,
+            });
+            $(".vertical").slick({
+                dots: true,
+                vertical: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+            $(".regular").slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+            $(".center").slick({
+                dots: true,
+                infinite: true,
+                centerMode: true,
+                slidesToShow: 5,
+                slidesToScroll: 3
+            });
+            $(".variable").slick({
+                dots: true,
+                infinite: true,
+                variableWidth: true
+            });
+            $(".lazy").slick({
+                lazyLoad: 'ondemand', // ondemand progressive anticipated
+                infinite: true
+            });
+        });
+    </script>
+    <br>
+    <br>
+    <div class="geeks">
+        <center><img src="img/CATEGORIES TO BAG.png"></center>
+    </div>
+
+    <div class="women-container">
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+
+                <img src="https://assets.myntassets.com/f_webp,w_350,c_limit,fl_progressive,dpr_2.0/assets/images/banners/2018/2/2/11517563660020-bed.jpg" class="product-thumb" style="width: 280px; height: 388px;" alt="">
+                <!-- <img src="img/card2.png" class="product-thumb" alt=""> -->
+                <!-- <img src="img/card3.png" class="product-thumb" alt=""> -->
+
+
+            </div>
+
+
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+
+                <!-- <img src="img/card1.png" class="product-thumb" alt=""> -->
+                <img src="https://assets.myntassets.com/f_webp,w_350,c_limit,fl_progressive,dpr_2.0/assets/images/banners/2018/2/2/11517563782565-furnishings.jpg" class="product-thumb" style="width: 280px; height: 388px;" alt="">
+                <!-- <img src="img/card3.png" class="product-thumb" alt=""> -->
+
+
+            </div>
+
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+
+                <!-- <img src="img/card1.png" class="product-thumb" alt=""> -->
+                <img src="https://assets.myntassets.com/f_webp,w_350,c_limit,fl_progressive,dpr_2.0/assets/images/banners/2018/2/2/11517563810789-art-n-decor.jpg" class="product-thumb" style="width: 280px; height: 388px;" alt="">
+                <!-- <img src="img/card3.png" class="product-thumb" alt=""> -->
+
+
+            </div>
+
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+
+                <!-- <img src="img/card1.png" class="product-thumb" alt=""> -->
+                <img src="https://assets.myntassets.com/f_webp,w_350,c_limit,fl_progressive,dpr_2.0/assets/images/banners/2018/2/2/11517563866590-lamps.jpg" class="product-thumb" style="width: 280px; height: 388px;" alt="">
+                <!-- <img src="img/card3.png" class="product-thumb" alt=""> -->
+
+
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+
+                <!-- <img src="img/card1.png" class="product-thumb" alt=""> -->
+                <img src="https://assets.myntassets.com/f_webp,w_350,c_limit,fl_progressive,dpr_2.0/assets/images/banners/2018/2/2/11517563925069-kitchen.jpg" class="product-thumb" style="width: 280px; height: 388px;" alt="">
+                <!-- <img src="img/card3.png" class="product-thumb" alt=""> -->
+
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+
+                <!-- <img src="img/card1.png" class="product-thumb" alt=""> -->
+                <img src="https://assets.myntassets.com/f_webp,w_350,c_limit,fl_progressive,dpr_2.0/assets/images/banners/2018/2/2/11517563958962-bath.jpg" class="product-thumb" style="width: 280px; height: 388px;" alt="">
+                <!-- <img src="img/card3.png" class="product-thumb" alt=""> -->
+
+
+            </div>
+        </div>
+        <!-- <button class="pre-btn"><img src="img/arrow.png" alt=""></button> -->
+        <!-- <button class="nxt-btn"><img src="img/arrow.png" alt=""></button> -->
+
+
+    </div>
+    <footer>
+        <div class="footer-content">
+            <img src="img/light-logo.png" class="logo" alt="">
+            <div class="footer-ul-container">
+                <ul class="category">
+                    <li class="category-title">men</li>
+                    <li><a href="#" class="footer-link">t-shirts</a></li>
+                    <li><a href="#" class="footer-link">sweatshirts</a></li>
+                    <li><a href="#" class="footer-link">shirts</a></li>
+                    <li><a href="#" class="footer-link">jeans</a></li>
+                    <li><a href="#" class="footer-link">trousers</a></li>
+                    <li><a href="#" class="footer-link">shoes</a></li>
+                    <li><a href="#" class="footer-link">casuals</a></li>
+                    <li><a href="#" class="footer-link">formals</a></li>
+                    <li><a href="#" class="footer-link">sports</a></li>
+                    <li><a href="#" class="footer-link">watch</a></li>
+                </ul>
+                <ul class="category">
+                    <li class="category-title">women</li>
+                    <li><a href="#" class="footer-link">t-shirts</a></li>
+                    <li><a href="#" class="footer-link">sweatshirts</a></li>
+                    <li><a href="#" class="footer-link">shirts</a></li>
+                    <li><a href="#" class="footer-link">jeans</a></li>
+                    <li><a href="#" class="footer-link">trousers</a></li>
+                    <li><a href="#" class="footer-link">shoes</a></li>
+                    <li><a href="#" class="footer-link">casuals</a></li>
+                    <li><a href="#" class="footer-link">formals</a></li>
+                    <li><a href="#" class="footer-link">sports</a></li>
+                    <li><a href="#" class="footer-link">watch</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
